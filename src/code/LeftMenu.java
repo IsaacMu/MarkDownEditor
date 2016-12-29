@@ -1,3 +1,8 @@
+
+/**
+ * Created by MuLi on 12/8/16.
+ */
+
 package code;
 
 import com.petebevin.markdown.MarkdownProcessor;
@@ -11,9 +16,7 @@ import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
-/**
- * Created by Isacclee on 12/8/16.
- */
+
 public class LeftMenu extends JScrollPane{
     private MarkdownProcessor processor;
     private ArrayList<Integer> arrayList;
@@ -29,7 +32,7 @@ public class LeftMenu extends JScrollPane{
         this.list.setFont(new Font("TimesRoman", Font.PLAIN,18));
         this.list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         this.getViewport().add(this.list);
-        this.setBounds(5,40,200,480);
+        this.setBounds(0,40,200,600);
     }
 
 
@@ -40,7 +43,7 @@ public class LeftMenu extends JScrollPane{
         String temp="";
         int row=0;
         int i=0;
-        Pattern pattern=Pattern.compile("<h[1-5]>.*");
+        Pattern pattern=Pattern.compile("<h[1-6]>.*");
         while((temp=content.readLine())!=null) {
             temp = this.processor.markdown(temp);
             if (pattern.matcher(temp).find()) {
@@ -49,7 +52,6 @@ public class LeftMenu extends JScrollPane{
                 this.model.add(i++,temp);
             }
             row++;
-
         }
     }
 
