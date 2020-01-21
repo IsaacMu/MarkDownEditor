@@ -53,8 +53,8 @@ public class MyMenuBar extends JMenuBar{
         importFile.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                openJfc.setDialogTitle("导入.md或.css文件");
-                int option=openJfc.showDialog(null,"导入");
+                openJfc.setDialogTitle("import .md或.css文件");
+                int option=openJfc.showDialog(null,"import");
                 if(option==JFileChooser.APPROVE_OPTION) {
                     File file = openJfc.getSelectedFile();
                     if (file.isFile()) try {
@@ -74,7 +74,7 @@ public class MyMenuBar extends JMenuBar{
                             editor.getEditor().setText(text);
                             editor.getEditor().setCaretPosition(0);
                         } else {
-                            JOptionPane.showMessageDialog(null, "请导入.css或.md文件", "警告", JOptionPane.INFORMATION_MESSAGE);
+                            JOptionPane.showMessageDialog(null, "import .css or.md", "warning", JOptionPane.INFORMATION_MESSAGE);
                         }
                     } catch (Exception e1) {
                         e1.printStackTrace();
@@ -88,8 +88,8 @@ public class MyMenuBar extends JMenuBar{
             @Override
             public void actionPerformed(ActionEvent e) {
                 saveJfc.setSelectedFile(new File("save"));
-                saveJfc.setDialogTitle("存为markdown文件");
-                int option=saveJfc.showDialog(null,"保存");
+                saveJfc.setDialogTitle("save as markdown");
+                int option=saveJfc.showDialog(null,"save");
                 if(option==JFileChooser.APPROVE_OPTION) {
                     File file = saveJfc.getSelectedFile();
                     String path = "";
@@ -123,8 +123,8 @@ public class MyMenuBar extends JMenuBar{
             @Override
             public void actionPerformed(ActionEvent e) {
                 saveJfc.setSelectedFile(new File("output"));
-                saveJfc.setDialogTitle("导出为word文件");
-                int option=saveJfc.showDialog(null,"导出");
+                saveJfc.setDialogTitle("output to word");
+                int option=saveJfc.showDialog(null,"output");
                 if(option==JFileChooser.APPROVE_OPTION) {
                     File file = saveJfc.getSelectedFile();
                     String path = "";
